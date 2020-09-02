@@ -32,12 +32,13 @@ public class ProductControllerTest {
 	public void testForCalculatPrice() {
 		ProductsRequest request = new ProductsRequest();
 		List<Products> listOfSkus = new ArrayList<Products>();
-	    listOfSkus.add(new Products("A", 5));
+	    listOfSkus.add(new Products("A", 3));
 	    listOfSkus.add(new Products("B" , 5));
 	    listOfSkus.add(new Products("C", 1));
 	    listOfSkus.add(new Products("D", 1));
 	    
 	    request.setListOfSku(listOfSkus);
+	    System.out.println("listOfSkus:   "+request.getListOfSku());
 	    System.out.println(prodController.calculatePriceWithPromotion(request));
 	}
 

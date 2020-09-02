@@ -19,13 +19,13 @@ public class PromotionRule {
 	
 	public int calculateValueForNormal(Products bModel) {
 		int totalValForSku = 0;
-		if(bModel.getSKU().equalsIgnoreCase(AppConstants.SKUA))
+		if(bModel.getSku().equalsIgnoreCase(AppConstants.SKUA))
 		   totalValForSku = bModel.getCount()*AppConstants.priceOfSkUA;
-		if(bModel.getSKU().equalsIgnoreCase(AppConstants.SKUB))
+		if(bModel.getSku().equalsIgnoreCase(AppConstants.SKUB))
 			totalValForSku = bModel.getCount()*AppConstants.priceOfSKUB;
-		if(bModel.getSKU().equalsIgnoreCase(AppConstants.SKUC))
+		if(bModel.getSku().equalsIgnoreCase(AppConstants.SKUC))
 			totalValForSku = bModel.getCount()*AppConstants.priceOfSKUC;
-		if(bModel.getSKU().equalsIgnoreCase(AppConstants.SKUD))
+		if(bModel.getSku().equalsIgnoreCase(AppConstants.SKUD))
 			totalValForSku = bModel.getCount()*AppConstants.priceofSKUD;
 		
 		return totalValForSku;
