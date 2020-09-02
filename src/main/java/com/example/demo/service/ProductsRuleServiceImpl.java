@@ -8,18 +8,19 @@ import org.springframework.boot.convert.PeriodUnit;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.AppConstants;
-import com.example.demo.model.BusinessRequest;
+
 import com.example.demo.model.Products;
+import com.example.demo.model.ProductsRequest;
 import com.example.demo.model.PromotionRule;
 
 
 @Service
-public class BusinessRuleServiceImpl implements BusinessRuleService {
+public class ProductsRuleServiceImpl implements ProductsRuleService {
 
 	@Autowired
 	private PromotionRule promoRule;
 
-	public Integer calculatePriceForSku(BusinessRequest request) {
+	public Integer calculatePriceForSku(ProductsRequest request) {
 		List<Products> listOfSkus = request.getListOfSku();
 		int totalPriceOfSku = 0;
 		
@@ -36,7 +37,7 @@ public class BusinessRuleServiceImpl implements BusinessRuleService {
 			listOfSkus.removeIf(model -> model.getSKU().equalsIgnoreCase(AppConstants.SKUC));
 			listOfSkus.removeIf(model -> model.getSKU().equalsIgnoreCase(AppConstants.SKUD));
 		}
-		for (BusinessRuleModel model : listOfSkus) {
+		for (Products model : listOfSkus) {
 			if (model.getSKU().equalsIgnoreCase(AppConstants.SKUA) && model.getCount() >= 3) {
 				totalPriceOfSku += promoRule.calculateValueForPromotionA(model);
 			}

@@ -2,25 +2,22 @@ package com.example.demo.model;
 
 import org.springframework.stereotype.Component;
 
-import com.tutorial.businessRule.model.AppConstants;
-import com.tutorial.businessRule.model.BusinessRuleModel;
-
 @Component
 public class PromotionRule {
 
-	public int calculateValueForPromotionA(BusinessRuleModel bModel) {
+	public int calculateValueForPromotionA(Products bModel) {
 		int totalValForSku = (bModel.getCount()/3)*130
 		              + (bModel.getCount()%3)*AppConstants.priceOfSkUA;
 		
 		return totalValForSku;
 	}
 	
-	public int calculateValueForPromotionB(BusinessRuleModel bModel) {
+	public int calculateValueForPromotionB(Products bModel) {
 		int totalValForSku = (bModel.getCount()/2)*45 + (bModel.getCount()%2)*AppConstants.priceOfSKUB;
 		return totalValForSku;
 	}
 	
-	public int calculateValueForNormal(BusinessRuleModel bModel) {
+	public int calculateValueForNormal(Products bModel) {
 		int totalValForSku = 0;
 		if(bModel.getSKU().equalsIgnoreCase(AppConstants.SKUA))
 		   totalValForSku = bModel.getCount()*AppConstants.priceOfSkUA;

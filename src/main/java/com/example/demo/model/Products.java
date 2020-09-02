@@ -7,7 +7,17 @@ import javax.persistence.Id;
 public class Products {
 	@Id
 	private String SKU;
-	private String count;
+	private int count;
+	
+	public Products() {
+		super();
+	}
+
+	public Products(String sKU, Integer count) {
+		super();
+		SKU = sKU;
+		this.count = count;
+	}
 	
 	public String getSKU() {
 		return SKU;
@@ -15,12 +25,14 @@ public class Products {
 	public void setSKU(String sKU) {
 		SKU = sKU;
 	}
-	public String getCount() {
+	
+	public int getCount() {
 		return count;
 	}
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
+
 	@Override
 	public String toString() {
 		return "Products [SKU=" + SKU + ", count=" + count + "]";

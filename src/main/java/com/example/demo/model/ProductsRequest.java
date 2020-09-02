@@ -11,8 +11,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_EMPTY)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class BusinessRequest implements Serializable {
+public class ProductsRequest implements Serializable {
 
+private static final long serialVersionUID = 1L;
 private List<Products>	listOfSku;
 
 public List<Products> getListOfSku() {
