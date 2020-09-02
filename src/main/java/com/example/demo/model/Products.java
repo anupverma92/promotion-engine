@@ -45,6 +45,11 @@ public class Products {
 	public void setCount(Integer count) {
 		this.count = count;
 	}
+
+	@Override
+	public String toString() {
+		return "Products [pid=" + pid + ", sku=" + sku + ", count=" + count + "]";
+	}
 	
 	
 	
